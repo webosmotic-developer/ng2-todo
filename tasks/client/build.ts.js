@@ -7,8 +7,8 @@ const TS_CONFIG = base.ROOT + "tsconfig.json";
 gulp.task(tasks.CLIENT_BUILD_TS, () => {
     let _tsProject = tsc.createProject(TS_CONFIG);
 
-    return _tsProject.src()
+    return gulp.src(base.DEV + "**/*.ts")
         .pipe(_tsProject())
         .js
-        .pipe(gulp.dest("."));
+        .pipe(gulp.dest(base.DIST));
 });

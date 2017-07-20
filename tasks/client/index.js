@@ -9,9 +9,9 @@ gulp.task(tasks.CLIENT_BUILD_DEV, [
 gulp.task(tasks.CLIENT_BUILD_DIST, () => {
     return new Promise((resolve, reject) => {
         runSequence(
+            tasks.CLIENT_DEL_DIST,
             tasks.CLIENT_BUILD_TS,
             //tasks.CLIENT_UNIT_TEST,
-            tasks.CLIENT_DEL_DIST,
             tasks.CLIENT_COPY,
             tasks.CLIENT_VIEWS_DIST,
             [
