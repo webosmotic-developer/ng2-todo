@@ -1,0 +1,18 @@
+{
+    "generator-ng-fullstack": {
+        "appName": "todo",
+        "username": "webosmotic-developer",
+        "userEmail": "dev.webosmotic@gmail.com",
+        "stack": "fullstack",
+        "repoHostUrl": "github.com",
+        "userNameSpace": "webosmotic-developer",
+        "client": "ng2",
+        "stylePreprocessor": "none",
+        "server": "node",
+        "nodeWebFrameworkServer": "express",
+        "transpilerServer": "node",
+        "secure": false,
+        "testsSeparated": false,
+        "differentStaticServer": false
+    }
+}

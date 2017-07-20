@@ -1,0 +1,50 @@
+<div class="container todo-container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Todo</h4>
+        </div>
+        <div class="panel-body">
+            <div class="row todo-add text-center">
+                <div class="col-xs-12">
+                    <form class="form-inline" (submit)="fnAdd(todoForm.todoMessage)">
+                        <div class="input-group">
+                            <input class="form-control" type="text"
+                                   name="todoMessage"
+                                   [(ngModel)]="todoForm.todoMessage"
+                                   [class.todo-error]="!todoForm.todoMessage.length"
+                                   placeholder="What do you have todo?"
+                                   autofocus>
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default" [disabled]="!todoForm.todoMessage.length">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let todo of todos;">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default" (click)="fnRemove(todo._id);">
+                                        <span class="glyphicon glyphicon-trash text-danger"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default" (click)="fnUpdate(todo)"
+                                            [disabled]="todo.isProcess">
+                                        <span class="glyphicon"
+                                              [ngClass]="!todo.isReadOnly ? 'glyphicon-edit' : 'glyphicon-floppy-disk'"></span>
+                                    </button>
+                                </div>
+                                <input type="text" class="form-control" placeholder="What do you have todo?"
+                                       [(ngModel)]="todo.todoMessage" [disabled]="!todo.isReadOnly">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
