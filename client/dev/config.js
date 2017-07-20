@@ -1,4 +1,10 @@
 System.config({
+    packages: {
+        app: { // must match your folder name
+            format: 'register',
+            defaultExtension: 'js'
+        }
+    },
     defaultJSExtensions: true,
     paths: {
         // paths serve as alias
