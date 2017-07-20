@@ -44,7 +44,7 @@
     "rxjs": "^5.0.0-beta.12",
     "systemjs": "^0.19.24",
     "typescript": "^2.4.1",
-    "zone.js": "^0.7.6"
+    "zone.js": "^0.6.23"
   },
   "devDependencies": {
     "aliv": "^1.7.2",
